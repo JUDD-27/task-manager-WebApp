@@ -11,10 +11,11 @@
     --secondary-color: #4B4BEF;
     --text-color: #110320;
     --accent-color: #FF4524;
+    --secondary-color-accent: #767cf5;
 
     --font-size: 16px;
     --heading-font-size: 24px;
-    --main-heading-font-size: 32px;
+    --main-heading-font-size: 28px;
     --border-radius: 12px;
 
     --main-heading-font: 'Poppins', sans-serif;
@@ -48,24 +49,31 @@ main {
 
 .app-header {
     text-align: left;
-    margin-bottom: 20px;
-    width: 600px;
-    background-color: var(--secondary-color);
+    margin-bottom: 40px;
+    width: 100%;
+
+    border:#4B4BEF solid 2px;
     padding: 10px 20px;
     border-radius: var(--border-radius);
-    color: var(--primary-color);
+    color: var(--text-color);
     font-family: var(--main-heading-font);
     font-size: var(--main-heading-font-size);
 }
 
-
+.task-column h2 {
+   background-color: var(--secondary-color-accent);
+    color: var(--primary-color);
+    padding: 10px;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
 
 .task-sidebar {
     display: grid;
     grid-template-columns: auto;
     gap: 20px;
     color: var(--primary-color);
-    padding: 20px;
+   
     border-radius: var(--border-radius);
     margin-bottom: 20px;
    
