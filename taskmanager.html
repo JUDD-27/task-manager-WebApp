@@ -32,28 +32,31 @@
                         <h2>Add Your Task</h2>
 
                         <form id="taskForm">
-                        <input type="text" id="taskName" placeholder="Add your task">
+                            <label for="taskName">Task:</label>
+                            <input type="text" id="taskName" placeholder="Add your task">
+                            
+                            <label for="taskDescription">Description:</label>
+                            <textarea id="taskDescription" placeholder="Description"></textarea>
 
-                        <textarea id="taskDescription" placeholder="Description"></textarea>
+                            <label for="taskPriority">Priority:</label>
+                            <select id="taskPriority">
+                                <option value="">Priority</option>
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
 
-                        <select id="taskPriority">
-                            <option value="">Priority</option>
-                            <option value="High">High</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Low">Low</option>
-                        </select>
+                            <label for="importantTask">
+                                <input type="checkbox" id="importantTask">
+                                Important
+                            </label>
 
-                        <label>
-                            <input type="checkbox" id="importantTask">
-                            Important
-                        </label>
+                            <label for="completedTask">
+                                <input type="checkbox" id="completedTask">
+                                Completed
+                            </label>
 
-                        <label>
-                            <input type="checkbox" id="completedTask">
-                            Completed
-                        </label>
-
-                        <button type="submit">Add Task</button>
+                            <button type="submit">Add Task</button>
                         </form>
                     </div>
 
