@@ -135,7 +135,7 @@ main {
    justify-content: center;
 }
 
-input[type="checkbox"] {
+.checkbox-group input[type="checkbox"] {
   display: none;
 
 } 
@@ -158,7 +158,7 @@ button[type="submit"] {
     color: var(--primary-color);
     border: none;
     border-radius: var(--border-radius);
-    font-size: var(--body-text-font);
+    font-size: var(--font-size);
     font-family: var(--main-heading-font);
     font-weight: bold;
     cursor: pointer;
