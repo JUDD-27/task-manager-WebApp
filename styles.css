@@ -16,6 +16,8 @@
     --main-heading-font-size: 32px;
     --border-radius: 12px;
 
+    --main-heading-font: 'Poppins', sans-serif;
+    --body-text-font: 'Source Sans 3', sans-serif;
     --letter-margin: 0.5em;
     --letter-spacing: 0.1em;
 
