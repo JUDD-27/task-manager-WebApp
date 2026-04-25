@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+</head>
+<body>
+    <main class="task-app">
+
+  <header class="app-header">
+    <h1>Task Manager</h1>
+  </header>
+
+  <section id="taskmanager" class="task-grid">
+
+    <div class="task-column" id="highTasks">
+      <h2>High</h2>
+    </div>
+
+    <div class="task-column" id="mediumTasks">
+      <h2>Medium</h2>
+    </div>
+
+    <div class="task-column" id="lowTasks">
+      <h2>Low</h2>
+    </div>
+
+    <aside class="task-sidebar">
+      <div class="add-task-panel">
+        <h2>Add Your Task</h2>
+
+        <form id="taskForm">
+          <input type="text" id="taskName" placeholder="Add your task">
+
+          <textarea id="taskDescription" placeholder="Description"></textarea>
+
+          <select id="taskPriority">
+            <option value="">Priority</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+
+          <label>
+            <input type="checkbox" id="importantTask">
+            Important
+          </label>
+
+          <label>
+            <input type="checkbox" id="completedTask">
+            Completed
+          </label>
+
+          <button type="submit">Add Task</button>
+        </form>
+      </div>
+
+      <div class="completed-task-panel" id="completedTasks">
+        <h2>Completed Task</h2>
+      </div>
+    </aside>
+
+  </section>
+
+</main>
+    
+</body>
+</html>
