@@ -78,6 +78,8 @@ main {
     text-align: center;
 }
 
+
+/* sidebar & Form styles */
 .task-sidebar {
     display: grid;
     grid-template-columns: auto;
