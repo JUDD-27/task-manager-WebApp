@@ -1,3 +1,5 @@
+/* Global Styles */ 
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -25,6 +27,8 @@
 
 }
 
+
+/* Layout Styles */
 body {
     font-family: var(--body-text-font);
     background-color: var(--primary-color);
@@ -58,6 +62,12 @@ main {
     color: var(--text-color);
     font-family: var(--main-heading-font);
     font-size: var(--main-heading-font-size);
+}
+
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
 }
 
 .task-column h2 {
@@ -94,14 +104,64 @@ main {
 }
 
 .task-sidebar form {
-    display: grid;
-    grid-template-rows: auto;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
-.task-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px;
+#taskForm label {
+  
+    margin-bottom: 5px;
+    font-weight: bold;
+   
 }
 
+#taskForm input[type="text"],
+#taskDescription,
+#taskForm select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size);
+    color: gray;
+}
+
+.checkbox-group {
+    display: flex;
+    gap: 20px;
+    margin: 40px 0 10px;
+   justify-content: center;
+}
+
+input[type="checkbox"] {
+  display: none;
+
+} 
+
+.checkbox-group label {
+  padding: 8px 12px;
+  border-radius: var(--border-radius);
+  background-color: var(--secondary-color-accent);
+  cursor: pointer;
+}
+
+.checkbox-group label:has(input[type="checkbox"]:checked) {
+  background-color: var(--accent-color);
+}
+
+button[type="submit"] {
+   
+    padding: 10px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--body-text-font);
+    font-family: var(--main-heading-font);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--accent-color);
+}
