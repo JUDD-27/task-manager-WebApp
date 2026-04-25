@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+:root {
+    --primary-color: #f0f0f0;
+    --secondary-color: #4B4BEF;
+    --text-color: #110320;
+    --accent-color: #FF4524;
+
+    --font-size: 16px;
+    --heading-font-size: 24px;
+    --main-heading-font-size: 32px;
+    --border-radius: 12px;
+
+    --letter-margin: 0.5em;
+    --letter-spacing: 0.1em;
+
+
+}
