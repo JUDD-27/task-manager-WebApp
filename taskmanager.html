@@ -22,15 +22,15 @@
                
         
                     <section class="task-column" id="highTasks">
-                    <h2>High</h2>
+                    <h2 class="high-header">High</h2>
                     </section>
 
                     <section class="task-column" id="mediumTasks">
-                    <h2>Medium</h2>
+                    <h2 class="medium-header">Medium</h2>
                     </section>
 
                     <section class="task-column" id="lowTasks">
-                    <h2>Low</h2>
+                    <h2 class="low-header">Low</h2>
                     </section>
          
 
@@ -46,20 +46,20 @@
                             <textarea id="taskDescription" placeholder="Description"></textarea>
 
                             <label for="taskPriority">Priority:</label>
-                            <select id="taskPriority">
-                                <option value="">Priority</option>
-                                <option value="High">High</option>
-                                <option value="Medium">Medium</option>
-                                <option value="Low">Low</option>
-                            </select>
+                                <select id="taskPriority" >
+                                    <option value="">Priority</option>
+                                    <option value="High">High</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Low">Low</option>
+                                </select>
                             <div class="checkbox-group">
                                 <label for="importantTask">
                                     <input type="checkbox" id="importantTask">
                                     Important
                                 </label>
 
-                                <label for="completedTask">
-                                    <input  type="checkbox" id="completedTask">
+                                <label for="completedInput">
+                                    <input  type="checkbox" id="completedInput">
                                     Completed
                                 </label>
                             </div>
