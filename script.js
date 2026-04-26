@@ -49,7 +49,7 @@ function renderTasks() {
                 <p class="task-date">${formattedDate}</p>
                 <div class="task-buttons">
                     <button class="restore-btn" data-id="${task.id}">Restore</button>
-                    <button class="btn-delete" data-id="${task.id}">Delete</button>
+                    <button id="btn-delete" data-id="${task.id}">Delete</button>
                 </div>
             </div>
         `;
@@ -62,7 +62,7 @@ function renderTasks() {
                 <p class="task-date"> ${formattedDate}</p>
                 <div class="task-buttons">
                     <button class="btn-done" data-id="${task.id}">Complete</button>
-                    <button class="btn-delete" data-id="${task.id}">Delete</button>
+                    <button id="btn-delete" data-id="${task.id}">Delete</button>
                 </div>
             </div>
         `;
@@ -74,7 +74,7 @@ function renderTasks() {
                 <p class="task-date"> ${formattedDate}</p>
                 <div class="task-buttons">
                     <button class="btn-done" data-id="${task.id}">Complete</button>
-                    <button class="btn-delete" data-id="${task.id}">Delete</button>
+                    <button id="btn-delete" data-id="${task.id}">Delete</button>
                 </div>
             </div>
         `;
@@ -86,7 +86,7 @@ function renderTasks() {
                 <p class="task-date"> ${formattedDate}</p>
                 <div class="task-buttons">
                     <button class="btn-done" data-id="${task.id}">Complete</button>
-                    <button class="btn-delete" data-id="${task.id}">Delete</button>
+                    <button id="btn-delete" data-id="${task.id}">Delete</button>
                 </div>
             </div>
         `;
@@ -103,7 +103,11 @@ function toggleComplete(id) {
         if (task.id === id) {
             task.isCompleted = true;
         }
+
+
     });
+
+
 
     saveTasks();
 
@@ -186,7 +190,7 @@ taskForm.addEventListener('submit', function(event) {
 });
 
 document.querySelector('#taskmanager').addEventListener('click', function(event) {
-    if (event.target.classList.contains('btn-delete')) {
+    if (event.target.id === 'btn-delete') {
         const taskId = Number(event.target.dataset.id);
         deleteTask(taskId);
     } else if (event.target.classList.contains('btn-done')) {

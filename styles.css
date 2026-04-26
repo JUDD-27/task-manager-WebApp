@@ -25,6 +25,7 @@
     --text-main: #171321;
     --text-muted: #6b7280;
     --important: #ff4d2d;
+    --delete-btn: #473fc1;
 
     
     --font-size: 16px;
@@ -82,17 +83,14 @@ main {
     gap: 20px;
 }
 
-/*
+
 .task-column h2 {
-   background-color: var(--secondary-color-accent);
-    color: var(--primary-color);
-    padding: 10px;
+   background-color: var(--primary);
+    color: var(--bg-main);
+    padding: 5px;
     border-radius: var(--border-radius);
     text-align: center;
 }
-*/
-
-
 
 
 /* sidebar & Form styles */
@@ -108,14 +106,14 @@ main {
 }
 
 .add-task-panel {
-    background-color: var(--text-color);
+    background-color: var(--dark-panel);
     padding: 20px;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .completed-task-panel {
-    background-color: var(--text-color);
+    background-color: var(--dark-panel);
     padding: 20px;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -243,7 +241,7 @@ button[type="submit"]:hover {
 .task-card .task-buttons button {
     padding: 8px 12px;
     background-color: var(--secondary-color); 
-    border: 2px solid var(--secondary-color);
+    border: none;
     color: var(--primary-color);
     border-radius: var(--border-radius);
     font-size: 12px;
@@ -252,18 +250,13 @@ button[type="submit"]:hover {
    
 }
 
-.btn-delete {
+
+#btn-delete {
    
-    background-color: var(--secondary-color);
-    border: none;
-    color: var(--primary-color);
-    padding: 4px 12px;
-    border-radius: var(--border-radius);
-    font-size: 12px;
-    cursor: pointer;
-    font-weight: bold;
+    background-color: var(--delete-btn); 
+
 }
- 
+
    
 .important-task {
     margin: 20px 0;
