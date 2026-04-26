@@ -240,7 +240,7 @@ button[type="submit"]:hover {
 
 .task-card .task-buttons button {
     padding: 8px 12px;
-    background-color: var(--secondary-color); 
+    background-color: var(--secondary-color-accent); 
     border: none;
     color: var(--primary-color);
     border-radius: var(--border-radius);
@@ -251,9 +251,9 @@ button[type="submit"]:hover {
 }
 
 
-#btn-delete {
+.task-card .task-buttons .btn-delete {
    
-    background-color: var(--delete-btn); 
+    background-color: var(--delete-btn);
 
 }
 

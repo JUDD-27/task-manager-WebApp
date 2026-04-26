@@ -14,6 +14,7 @@ const completedInput = document.querySelector('#completedInput');
 const highTasks = document.querySelector('#highTasks');
 const mediumTasks = document.querySelector('#mediumTasks');
 const lowTasks = document.querySelector('#lowTasks');
+const taskColumns = document.querySelectorAll('.task-column');
 
 // Array to store tasks
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -49,45 +50,52 @@ function renderTasks() {
                 <p class="task-date">${formattedDate}</p>
                 <div class="task-buttons">
                     <button class="restore-btn" data-id="${task.id}">Restore</button>
-                    <button id="btn-delete" data-id="${task.id}">Delete</button>
+                    <button class="btn-delete" data-id="${task.id}">Delete</button>
                 </div>
             </div>
         `;
     }
     else if (task.priority === "High") {
         highTasks.innerHTML += `
-            <div class="task-card ${importantClass}">
+           <div class="task-card ${importantClass}" draggable="true" data-id="${task.id}">
+
                 <h3>${task.name}</h3>
                 <p>${task.description}</p>
                 <p class="task-date"> ${formattedDate}</p>
                 <div class="task-buttons">
                     <button class="btn-done" data-id="${task.id}">Complete</button>
-                    <button id="btn-delete" data-id="${task.id}">Delete</button>
+                    <button class="btn-delete" data-id="${task.id}">Delete</button>
                 </div>
+                
+
             </div>
         `;
     } else if (task.priority === "Medium") {
         mediumTasks.innerHTML += `
-            <div class="task-card ${importantClass}">
+            <div class="task-card ${importantClass}" draggable="true" data-id="${task.id}">
                 <h3>${task.name}</h3>
                 <p>${task.description}</p>
                 <p class="task-date"> ${formattedDate}</p>
                 <div class="task-buttons">
                     <button class="btn-done" data-id="${task.id}">Complete</button>
-                    <button id="btn-delete" data-id="${task.id}">Delete</button>
+                    <button class="btn-delete" data-id="${task.id}">Delete</button>
                 </div>
+       
+
             </div>
         `;
     } else if (task.priority === "Low") {
         lowTasks.innerHTML += `
-            <div class="task-card ${importantClass}">
+            <div class="task-card ${importantClass}" draggable="true" data-id="${task.id}">
                 <h3>${task.name}</h3>
                 <p>${task.description}</p>
                 <p class="task-date"> ${formattedDate}</p>
                 <div class="task-buttons">
                     <button class="btn-done" data-id="${task.id}">Complete</button>
-                    <button id="btn-delete" data-id="${task.id}">Delete</button>
+                    <button class="btn-delete" data-id="${task.id}">Delete</button>
                 </div>
+               
+
             </div>
         `;
     }
@@ -115,6 +123,7 @@ function toggleComplete(id) {
     renderTasks();
 }
 
+
 /* - Function to delete a task from the list */
 function deleteTask(id) {
     tasks = tasks.filter(function(task) {
@@ -137,6 +146,34 @@ function restoreTask(id) {
     console.log(JSON.stringify(tasks));
     renderTasks();
 }
+
+/* - Event listeners for drag and drop functionality to move tasks between priority sections */
+
+taskColumns.forEach(function(column) {
+    column.addEventListener('dragover', function(event) {
+        event.preventDefault();
+    });
+
+    column.addEventListener('drop', function(event) {
+        event.preventDefault();
+
+        const taskId = Number(event.dataTransfer.getData('text/plain'));
+        const newPriority = column.querySelector('h2').textContent;
+
+        tasks.forEach(function(task) {
+            if (task.id === taskId) {
+                task.priority = newPriority;
+                task.isCompleted = false;
+            }
+        });
+
+        saveTasks();
+        console.log(JSON.stringify(tasks));
+        renderTasks();
+    });
+});
+
+
 
 /*
  - Event listener for form submission to add a new task
@@ -190,7 +227,7 @@ taskForm.addEventListener('submit', function(event) {
 });
 
 document.querySelector('#taskmanager').addEventListener('click', function(event) {
-    if (event.target.id === 'btn-delete') {
+    if (event.target.classList.contains('btn-delete')) {
         const taskId = Number(event.target.dataset.id);
         deleteTask(taskId);
     } else if (event.target.classList.contains('btn-done')) {
@@ -201,5 +238,12 @@ document.querySelector('#taskmanager').addEventListener('click', function(event)
         restoreTask(taskId);
     }
 });
+
+document.querySelector('#taskmanager').addEventListener('dragstart', function(event) {
+    if (event.target.classList.contains('task-card')) {
+        event.dataTransfer.setData('text/plain', event.target.dataset.id);
+    }
+});
+
 
 renderTasks();
